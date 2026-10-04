@@ -1,0 +1,20 @@
+replicaCount: 2
+
+image:
+  repository: go-app
+  tag: v1
+  pullPolicy: Never
+
+service:
+  type: NodePort
+  port: 8080
+  targetPort: 8080
+  nodePort: 30080
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 64Mi
+  limits:
+    cpu: 500m
+    memory: 128Mi
